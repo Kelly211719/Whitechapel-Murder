@@ -1,0 +1,40 @@
+<html>
+<head>
+<title> WhiteChapel Murder </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+void setup()
+{
+	
+	size( 1000,800 );
+	frameRate( 30 );
+	
+    Letter = loadImage("images/Letter.png");
+    
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+    	
+	image(Letter,90,150,800,550);
+	
+	if (mousePressed == true && mouseButton == LEFT)
+    {
+        if(mouseX > 90 && mouseX < 90+800 &&
+        	mouseY > 150 && mouseY < 150+550)
+        {
+			link("pb1.html");
+		}
+
+    }
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

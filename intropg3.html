@@ -1,0 +1,69 @@
+<html>
+<head>
+<title> intropg3 </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage sherlock;
+PImage next;
+PImage sent1;
+int x;
+int a;
+
+void setup()
+{
+	size( 1150,595 );
+	frameRate( 30 );  
+	sherlock = loadImage("images/sherlock2.jpg");
+	next = loadImage("images/next.png");
+	sent1 = loadImage("images/intropg3sent1.png");
+	x = 0;
+	a = 0;
+	
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+	
+	image(sherlock,0,0,1150,595);
+	image(next,800+150,500-10);
+	
+	fill(255,255,255,0);
+	stroke(255,255,255,0);
+	rect(950,500-10,190,100);
+	
+	
+	if(mousePressed == true && mouseButton == LEFT && a == 0)
+	{
+		if(mouseX > 950 && mouseX < 950+190 && mouseY > 500-10 && mouseY < 500-10+100)
+		{
+			x = x+1;
+			a = 1;
+		}
+	}
+	
+	if(mousePressed == false)
+	{
+		a = 0;	
+	}
+	
+	if(x == 1)
+	{
+		image(sent1,250,500-10);
+	}
+
+	if(x == 2)
+	{
+		link("begin.html");
+	}
+	
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

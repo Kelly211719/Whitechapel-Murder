@@ -1,0 +1,37 @@
+<html>
+<head>
+<title> Invitation </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage invitation;
+
+void setup()
+{
+	size( 1150,800 );
+	frameRate( 30 );  
+	invitation = loadImage("images/invitation.png");
+	
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+	
+	image(invitation,80,0,1000,800);
+	
+	if(mousePressed == true && mouseButton)
+	
+	{
+		link("intropg4.html");
+	}
+	
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

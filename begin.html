@@ -1,0 +1,51 @@
+<html>
+<head>
+<title> begin </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage bkgrd;
+PImage invitation;
+
+void setup()
+{
+	size( 1150,595 );
+	frameRate( 30 );  
+	bkgrd = loadImage("images/door.png");
+	invitation = loadImage("images/invitation.png");
+	
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+	
+	image(bkgrd,0,0,1150,595);
+	
+	fill(0,0,255);
+	
+	if(mouseX > 741 && mouseY >522 && mouseX < 886 && mouseY < 562)
+	{
+		cursor(HAND);
+		
+		if(mousePressed == true && mouseButton == LEFT)
+		{
+			link("invitation.html");
+		}
+	}
+	else
+	{	
+		cursor(ARROW);
+	}
+	
+	
+	
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

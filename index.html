@@ -1,0 +1,59 @@
+<html>
+<head>
+<title> Whitechapel Murder </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage bkgrd;
+PImage sherlock;
+PImage moriarty;
+PImage start;
+PImage title;
+
+
+void setup()
+{
+	size( 1317,595 );
+	frameRate( 30 );  
+	
+	bkgrd = loadImage ("images/background1.png");
+	sherlock = loadImage ("images/Sherlockholmes.png");
+	moriarty = loadImage ("images/Moriarty.png");
+	start = loadImage ("images/Start.png");
+	title = loadImage("images/title.png");
+}
+
+
+
+void draw()
+{
+	background(255,255,255);
+	
+	image(bkgrd);
+	image(start,495+150,100+300,150+20,75);
+	image(sherlock,-150,30,0,580);
+	image(moriarty,400,1);
+	image(title,500-63,150+15,500,250);
+	
+	stroke(0,0,0,0); 
+	fill(255,255,255,0);
+	rect(495+150,400,170,75);
+	
+	if(mousePressed == true && mouseButton ==LEFT)
+	{ 
+		if(mouseX > 495+150 && mouseX < 495+150+170 && mouseY > 400 && mouseY < 475)
+		{
+			link("intropg2.html");
+		}
+	}
+	
+	
+	
+	
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

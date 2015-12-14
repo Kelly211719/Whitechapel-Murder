@@ -1,0 +1,84 @@
+<html>
+<head>
+<title> WhiteChapel Murder </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+void setup()
+{
+	
+	size( 1000,800 );
+	frameRate( 30 );
+	
+    pb1 = loadImage("images/pb1.png");
+    
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+
+	image(pb1,0,0,1000,800);
+	
+	if (mousePressed == true && mouseButton == LEFT)
+    {
+        if(mouseX > 355 && mouseX < 492 &&
+        	mouseY > 679 && mouseY < 720)
+        {
+			link("Letter.html");
+		}
+
+    }
+    
+    if (mousePressed == true && mouseButton == LEFT)
+    {
+        if(mouseX > 131 && mouseX < 186 &&
+        	mouseY > 135 && mouseY < 282)
+        {
+			link("poster1.html");
+		}
+
+    }
+    
+    if (mousePressed == true && mouseButton == LEFT)
+    {
+        if(mouseX > 348 && mouseX < 414 &&
+        	mouseY > 151 && mouseY < 301)
+        {
+			link("poster2.html");
+		}
+
+    }
+    
+    if (mousePressed == true && mouseButton == LEFT)
+    {
+        if(mouseX > 890 && mouseX < 977 &&
+        	mouseY > 65 && mouseY < 227)
+        {
+			link("poster3.html");
+		}
+
+    }   
+  
+	if(mouseX > 611 && mouseX < 641 && mouseY > 486 && mouseY < 505)
+	{
+		cursor(HAND);
+		
+		if(mousePressed== true && mouseButton == LEFT)
+		{
+			link("pb2.html");
+		}
+	}
+	else
+	{
+		cursor(ARROW);
+	}
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

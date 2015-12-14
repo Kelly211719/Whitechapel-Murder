@@ -1,0 +1,129 @@
+<html>
+<head>
+<title> intropg2 </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage bkgrd;
+PImage invitation;
+PImage next;
+PImage sent1;
+PImage sent2;
+PImage sent3;
+PImage sent4;
+PImage sent5;
+PImage sent6;
+PImage sent7;
+PImage sent8;
+int x;
+
+void setup()
+{
+	size( 1317,595 );
+	frameRate( 30 );  
+	
+	bkgrd = loadImage ("images/intropg2-pic1.jpg");
+	invitation = loadImage("images/invitation.png");
+	next = loadImage("images/next.png");
+	sent1 = loadImage("images/sentence1.png");
+	sent2 = loadImage("images/sentence2.png");
+	sent3 = loadImage("images/sentence3.png");
+	sent4 = loadImage("images/sent4.png");
+	sent5 = loadImage("images/sent5.png");
+	sent6 = loadImage("images/sent6.png");
+	sent7 = loadImage("images/sent7.png");
+	sent8 = loadImage("images/sent8.png");
+	x = 0;
+	a = 0;
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+	image(bkgrd,0,0,1317,595);
+	
+	fill(255,255,255,0);
+	stroke(255,255,255,0);
+	rect(1060,490,200,100);
+	image(next,1060,490);
+	
+	fill(255,255,255);
+
+	if(mousePressed== true && mouseButton == LEFT && a == 0)
+	{
+		if(mouseX > 1060 && mouseX < 1060+200 && mouseY > 490 && mouseY < 490+100)
+		{
+			x = x+1;
+			a = 1;
+			
+		}
+	}
+	
+	if(mousePressed == false)
+	{
+		a = 0;
+	}
+	
+	if(x == 1)
+	{
+		image(sent1,30,40);
+	}
+	
+	if(x == 2)
+	{
+		image(sent1,30,40);
+		image(sent2,23,65);
+	}
+	
+	if(x ==3)
+	{
+		image(sent1,30,40);
+		image(sent2,23,65);
+		image(sent3,30,85);
+	}
+	
+	if(x == 5)
+	{
+		image(sent4,30,40);
+	}
+	
+	if(x == 6)
+	{
+		image(sent4,30,40);
+		image(sent5,35,65);
+	}
+	
+	if(x == 7)
+	{
+		image(sent4,30,40);
+		image(sent5,35,65);
+		image(sent6,30,90);
+	}
+	
+	if(x ==8)
+	{
+		image(sent4,30,40);
+		image(sent5,35,65);
+		image(sent6,30,90);
+		image(sent7,30,115);
+	}
+	
+	if(x ==9)
+	{
+		image(sent8,30,40,800,80);
+	}
+	
+	if(x == 10)
+	{
+		link("intropg3.html");
+	}
+	
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

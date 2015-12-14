@@ -1,0 +1,148 @@
+<html>
+<head>
+<title> Pb2 </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage bkgrd;
+PImage news;
+PImage hint1;
+PImage hint2;
+int x;
+int a;
+
+int y;
+int b;
+
+int z;
+int c;
+
+void setup()
+{
+	size( 1150,650 );
+	frameRate( 30 );  
+	
+	bkgrd = loadImage("images/moriartyroom.jpg");
+	news = loadImage("images/newspaperpb2.png");
+	hint1 = loadImage("images/pb2hint1.png");
+	hint2 = loadImage("images/pb2hint2.png");
+	
+	x = 0;
+	a = 0;
+	y = 0;
+	b = 0;
+	z = 0;
+	c = 0;
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+	image(bkgrd,0,0,1150,650);
+	
+	if(mouseX > 306 && mouseX < 349 && mouseY > 357 && mouseY < 398 || mouseX > 770 && 
+		mouseX < 790 && mouseY > 276 && mouseY < 317 || mouseX > 330 && mouseX < 415 &&
+		mouseY > 79 && mouseY < 115 || mouseX > 789 && mouseX < 848 && mouseY > 500 &&
+		mouseY < 570 || mouseX >560 && mouseX < 675 && mouseY > 71 && mouseY < 171 || 
+		mouseX > 438 && mouseX < 511 && mouseY > 479 && mouseY < 575 || mouseX > 361 &&
+		mouseX <377 && mouseY >225 && mouseY < 255 || mouseX > 407 && mouseX < 433 && 
+		mouseY > 399 && mouseY < 425)
+	{
+		cursor(HAND);
+		
+	}
+	else
+	{
+		cursor(ARROW);
+	}
+	
+	if(mousePressed == true && mouseButton == LEFT && a == 0)
+	{ 
+		if(mouseX > 306 && mouseX < 349 && mouseY > 357 && mouseY < 398)
+		{
+			x = 1;
+			a = 1;
+		}
+	}
+	
+	if(mousePressed == false)
+	{
+		a = 0;
+	}
+	
+	if(x == 1)
+	{
+		image(news,50,23,1050,600);
+		if(mousePressed == true && mouseButton == LEFT && a == 0)
+		{
+			x = 0;
+		}
+	}
+	
+	
+	if(mousePressed == true && mouseButton == LEFT && b == 0)
+	{
+		if(mouseX > 770 && mouseX < 790 && mouseY > 276 && mouseY < 317)
+		{
+			y = 1;
+			b = 1;
+		}
+	}
+	
+	if(mousePressed == false)
+	{	
+		b =0;
+	}
+	
+	if(y == 1)
+	{
+		image(hint1,150+25,100-20);
+		
+		if(mousePressed == true && mouseButton == LEFT && b == 0)
+		{
+			y = 0;
+		}
+	}
+
+	if(mousePressed == true && mouseButton == LEFT && c == 0)
+	{
+		if(mouseX > 330 && mouseX < 415 && mouseY > 79 && mouseY < 115)
+		{
+			z = 1;
+			c = 1;
+		}
+	}
+	
+	if(mousePressed == false)
+	{
+		c = 0;
+	}
+	
+	if(z == 1)
+	{
+		image(hint2,150+25, 100-20);
+		
+		if(mousePressed == true && mouseButton == LEFT && c == 0)
+		{
+			z = 0;
+		}
+	}
+	
+	if(mousePressed == true && mouseButton == LEFT)
+	{
+		if(mouseX > 407 && mouseX < 433 && mouseY > 399 && mouseY < 425)
+		{
+			link("pb2password.html");
+		}
+	}
+	
+
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>

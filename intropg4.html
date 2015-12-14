@@ -1,0 +1,82 @@
+<html>
+<head>
+<title> Intropg4 </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage dest;
+PImage next;
+PImage sent9;
+PImage sent10;
+int x;
+int a;
+
+void setup()
+{
+	size( 1150,600 );
+	frameRate( 30 );  
+	
+	dest = loadImage("images/destination.png.jpg");
+	next = loadImage("images/next.png");
+	sent9 = loadImage("images/sent9.png");
+	sent10 = loadImage("images/sent10.png");
+	
+	a = 0;
+	x = 0;
+	
+}
+
+
+
+void draw()
+{
+	background(0,0,0);
+	
+	image(dest,0,0,1150,700);
+	
+	fill(255,255,255,0);
+	stroke(255,255,255,0);
+	rect(920,480,200,100);
+	
+	image(next,920,480);
+	
+	
+	if(mousePressed == true && mouseButton == LEFT && a == 0)
+	{
+		if(mouseX >920 && mouseX < 920+200 &&  mouseY > 480 && mouseY < 480+100)
+		{
+			x = x+1;
+			a =1;
+		}
+	}
+	
+	if(mousePressed == false)
+	{
+		a = 0;
+	}
+	
+	if(x == 1)
+	{
+		image(sent9,480,10);
+	}
+	
+	if(x == 2)
+	{
+		image(sent9,480,10);
+		image(sent10,483,35);
+	}
+	
+	if(x == 3)
+	{
+		link("pb1.html");
+	}
+	
+	
+	
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+<body>
+</body>
+</html>
